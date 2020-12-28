@@ -26,7 +26,7 @@ public:
         cout << "Published in: ";
         cin >> year;
     };
-    virtual void input()
+    virtual void output()
     {
         cout << "Title: " << title;
         cout << "Published in: " << year;
