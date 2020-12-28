@@ -28,8 +28,8 @@ public:
     };
     virtual void output()
     {
-        cout << "Title: " << title;
-        cout << "Published in: " << year;
+        cout << "Title: " << title << endl;
+        cout << "Published in: " << year << endl;
     };
     virtual int getType()
     {
