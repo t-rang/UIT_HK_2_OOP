@@ -1,5 +1,4 @@
-#ifndef TH08_BOOK_H
-#define TH08_BOOK_H
+#pragma once
 #include <string>
 #include <iostream>
 using namespace std;
@@ -37,4 +36,3 @@ public:
     }
     ~book(){};
 };
-#endif //TH08_BOOK_H

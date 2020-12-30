@@ -1,33 +1,31 @@
-// novel (author, fictional / input, output)
-#ifndef TH08_BOOK_H
-#define TH08_BOOK_H
+#pragma once
 #include <string>
 #include <iostream>
 #include "book.h"
 using namespace std;
 
 class novel:
-public book 
+public book
 {
 protected:
     string author;
     bool fictional;
 public:
-    nove(){};
+    novel(){};
     void input()
     {
         book::input();
         cout << "Author: ";
         cin.ignore();
-        getline(cin, subject);
-        cout << "Fictional? (0. No 1. Yes)";
+        getline(cin, author);
+        cout << "Fictional? (0. No 1. Yes): ";
         cin >> fictional;
     };
     void output()
     {
         book::output();
-        cout << "Author: " << subject << endl;
-        cout << "Fictional:";
+        cout << "Author: " << author << endl;
+        cout << "Fictional: ";
         if (fictional==0)
         {
             cout << "No";
@@ -36,11 +34,11 @@ public:
         {
             cout << "Yes";
         }
+        cout << endl;
     };
     int getType()
     {
         return 1;
     }
-    ~nove(){};
+    ~novel(){};
 };
-#endif //TH08_BOOK_H

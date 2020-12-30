@@ -1,12 +1,11 @@
-#ifndef TH08_BOOK_H
-#define TH08_BOOK_H
+#pragma once
 #include <string>
 #include <iostream>
 #include "book.h"
 using namespace std;
 
 class magazine:
-public book 
+public book
 {
 protected:
     string theme;
@@ -30,4 +29,3 @@ public:
     }
     ~magazine(){};
 };
-#endif //TH08_BOOK_H

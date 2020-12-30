@@ -3,42 +3,90 @@
 #include "novel.h"
 #include "magazine.h"
 #include <vector>
+#include <iostream>
+using namespace std;
 
 class bookstore
 {
 private:
     int numOfBooks;
-    vector<book> books;
+    vector<book*> books;
 public:
     bookstore(){};
     void input()
     {
+        cout << "Number of books: ";
+        cin >> numOfBooks;
         int flag;
         cout << "Select type of book: 0. Textbook 1. Novel 2. Magazine" << endl;
         for (int i = 0; i < numOfBooks; i++)
         {
             cout << "Book type (0, 1, 2): ";
+            cin >> flag;
             switch (flag)
+            {
                 case 0:
                 {
-                    textbook 
+                    book* tb = new textbook();
+                    books.push_back(tb);
+                    books[i]->input();
+                    break;
                 }
-            books.push_back()
-            
+                case 1:
+                {
+                    book* tb = new novel();
+                    books.push_back(tb);
+                    books[i]->input();
+                    break;
+                }
+                case 2:
+                {
+                    book* tb = new magazine();
+                    books.push_back(tb);
+                    books[i]->input();
+                    break;
+                }
+            }
         }
-        
     };
-    ~bookstore(){};
-    
+    void output()
+    {
+        for (int i = 0; i < numOfBooks; i++)
+        {
+            books[i]->output();
+        }
+    }
+    void countBooksPerType()
+    {
+        int textbookCount = 0;
+        int novelCount = 0;
+        int magazineCount = 0;
+        int flag;
+        for (int i = 0; i < numOfBooks; i++)
+        {
+            flag = books[i]->getType();
+            switch (flag)
+            {
+                case 0:
+                {
+                    textbookCount++;
+                    break;
+                }
+                case 1:
+                {
+                    novelCount++;
+                    break;
+                }
+                case 2:
+                {
+                    magazineCount++;
+                    break;
+                }
+            }
+        }
+        cout << "Textbook: " << textbookCount << endl;
+        cout << "Novel: " << novelCount << endl;
+        cout << "Magazine: " << magazineCount << endl;
+    }
+    ~bookstore(){};    
 };
-// Xây dựng các loại đối tượng sách, sách giáo khoa, tiểu thuyết, tạp chí.
-// Viết chương trình cho phép quản lý một danh sách các loại đối tượng kể trên.
-
-// book (title, year, type / input, output)
-
-// textbook (subject / input, output)
-// novel (author, fictional / input, output)
-// magazine (theme / input, output)
-// bookstore (n, vector / input, output, countType, add, remove)
-
-

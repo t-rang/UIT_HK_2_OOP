@@ -1,12 +1,11 @@
-#ifndef TH08_BOOK_H
-#define TH08_BOOK_H
+#pragma once
 #include <string>
 #include <iostream>
 #include "book.h"
 using namespace std;
 
 class textbook:
-public book 
+public book
 {
 protected:
     string subject;
@@ -30,4 +29,3 @@ public:
     }
     ~textbook(){};
 };
-#endif //TH08_BOOK_H
