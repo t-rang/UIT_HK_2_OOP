@@ -18,6 +18,14 @@ int main()
     bookstore b;
     cout << "\nInput books in bookstore." << endl;
     b.input();
+    int numToAdd;
+    cout << "How many books to add: ";
+    cin >> numToAdd;
+    b.addBooks(numToAdd);
+    int numToRemove;
+    cout << "How many books to remove (last in first out): ";
+    cin >> numToRemove;
+    b.removeBooks(numToRemove);
     cout << "\nOutput books in bookstore." << endl;
     b.output();
     cout << "\nCount books in bookstore per type." << endl;
